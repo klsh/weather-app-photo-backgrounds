@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font: 16px/1.5 "Roboto", sans-serif;
+    background: url("../img/background.jpg") center no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex {
+    display: flex;
+    gap: 10px;
+}
+.wrapper {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 20px;
+    min-width: 500px;
+    backdrop-filter: blur(5px);
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.button {
+    min-width: 43px;
+    max-width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.weather {
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+.weather_icon {
+    max-width: 24px;
+}
+.error {
+    margin-top: 20px;
+    color: red;
+}
