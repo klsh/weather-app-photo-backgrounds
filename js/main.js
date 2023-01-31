@@ -74,8 +74,30 @@ let weather = {
     },
 };
 
+let background = {
+    api_key: "E72D-ZcH7_tGHhCx1Tyik5UWbdJ15p_cRu-QjU0trc8",
+    fetchPhoto: function (cityName) {
+        fetch(
+            `https://api.unsplash.com/search/photos?query=${
+                cityName + " city"
+            }&client_id=${this.api_key}`
+        )
+            .then((response) => response.json())
+            .then((data) => this.renderBackground(data))
+            .catch((err) => {
+                console.error(err);
+            });
+    },
+    renderBackground: function (info) {
+        console.log(info);
+        document.querySelector("body").style.backgroundImage =
+            "url(" + info.results[0].urls.regular + ")";
+    },
+};
+
 document.querySelector(".button").onclick = function () {
     document.querySelector(".weather").style.display = "none";
     document.querySelector(".error").style.display = "none";
     weather.fetchWeather(document.querySelector(".input").value);
+    background.fetchPhoto(document.querySelector(".input").value);
 };

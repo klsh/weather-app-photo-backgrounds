@@ -15,7 +15,8 @@ img {
 
 body {
     font: 16px/1.5 "Roboto", sans-serif;
-    background: url("../img/background.jpg") center no-repeat;
+    background: center no-repeat;
+    background-image: url("../img/background.jpg");
     background-size: cover;
     min-height: 100vh;
     display: flex;
