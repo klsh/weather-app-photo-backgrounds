@@ -42,7 +42,7 @@
 //     });
 
 let weather = {
-    api_key: "24865df0ff28e598d81ca47f702b0352",
+    api_key: "secret_api_key",
     fetchWeather: function (cityName) {
         fetch(
             `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${this.api_key}&lang=ru&units=metric`
@@ -75,7 +75,7 @@ let weather = {
 };
 
 let background = {
-    api_key: "E72D-ZcH7_tGHhCx1Tyik5UWbdJ15p_cRu-QjU0trc8",
+    api_key: "secret_api_key",
     fetchPhoto: function (cityName) {
         fetch(
             `https://api.unsplash.com/search/photos?query=${
@@ -91,7 +91,9 @@ let background = {
     renderBackground: function (info) {
         console.log(info);
         document.querySelector("body").style.backgroundImage =
-            "url(" + info.results[0].urls.regular + ")";
+            "url(" +
+            info.results[Math.floor(Math.random() * 11)].urls.regular +
+            ")";
     },
 };
 
